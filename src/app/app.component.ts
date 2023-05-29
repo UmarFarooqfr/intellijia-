@@ -13,7 +13,7 @@ export class AppComponent {
   isAdminSide = new FormControl('');
   alarmField = new FormControl('');
   refreshIntervals = [{ name: 'a', value: '1' }, { name: 'b', value: '2' }];
-  countriesLanguages = [{ name: 'a', code: '1' }, { name: 'b', code: '2' }];
+  countriesLanguages = [{name: 'America (Default)', code: 'us' },{name: 'Spain ', code: 'es'} ];
   notifications = [{ name: 'a', code: '1', content: '', eventTime: '123' }, { name: 'b', code: '2', content: '', eventTime: '123' }];
   selectedTime: string = '';
 

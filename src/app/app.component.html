@@ -5,46 +5,72 @@
         <div fxLayout="row" fxLayoutAlign="center center" class="header-top-items">
             <mat-icon>alarm</mat-icon>
             <div class="demo-section">
-                <mat-icon matBadge="3" class="notification-icon">notifications_none</mat-icon>
+                <mat-icon matBadge="3" [matMenuTriggerFor]="notification" class="notification-icon">notifications_none</mat-icon>
             </div>
+            <mat-menu #notification="matMenu" class="notification-menu">
+                <span style="display: flex;">
+                    <mat-icon style="margin-top: 20px; margin-left: 10px;">notifications_none</mat-icon>
+                    <p>Lorem, ipsum dolor sit amet consectetur </p>
+                </span>
+                <span style="display: flex;">
+                    <mat-icon style="margin-top: 20px; margin-left: 10px;">notifications_none</mat-icon>
+                    <p>Lorem, ipsum dolor sit amet consectetur </p>
+                </span>
+                <span style="display: flex;">
+                    <mat-icon style="margin-top: 20px; margin-left: 10px;">notifications_none</mat-icon>
+                    <p>Lorem, ipsum dolor sit amet consectetur </p>
+                </span>
+                <button mat-raised-button class="btn-show-notification">
+                    <span>Show Notifaication</span>
+                </button>
+            </mat-menu>
 
             <!-- profile icon start -->
-            <button [matMenuTriggerFor]="profile" mat-icon-button>
-                <mat-icon customTooltip="Profile Settings">person</mat-icon>
+            <button [matMenuTriggerFor]="profile" mat-icon-button class="profile-image">
+                <img src="./assets/person.png" alt="Profile Image">
             </button>
-            <mat-menu #profile="matMenu" class="mymegamenu">
+            <mat-menu #profile="matMenu" class="profile-menu">
                 <button mat-menu-item>
-                    <mat-icon>settings</mat-icon>
-                    <span class="mat-menu-text">Settings </span>
+                    <mat-icon class="mat-menu-icon">settings</mat-icon>
+                    <span class="mat-menu-text">Account </span>
                 </button>
                 <button mat-menu-item>
-                    <mat-icon>person</mat-icon>
-                    <span class="mat-menu-text">Profile</span>
+                    <mat-icon class="mat-menu-icon">notifications</mat-icon>
+                    <span class="mat-menu-text">Disable Notification</span>
+                    <mat-slide-toggle style="margin-left: 10px;" (click)="$event.stopPropagation()" color="warn">
+                    </mat-slide-toggle>
                 </button>
                 <button mat-menu-item>
-                    <mat-icon>notifications_off</mat-icon>
-                    <span class="mat-menu-text">Disable notifications</span>
+                    <mat-icon class="mat-menu-icon">notifications_off</mat-icon>
+                    <span class="mat-menu-text">Admin View</span>
+                    <mat-slide-toggle style="margin-left: 57px;" (click)="$event.stopPropagation()" color="warn">
+                    </mat-slide-toggle>
+
                 </button>
 
                 <!-- select language -->
                 <button mat-menu-item [matMenuTriggerFor]="levelOne">
                     <div fxLayout="row" fxLayoutAlign="start center">
-                        <mat-icon>language</mat-icon>
-                        <span class="mat-menu-text"> Select Language </span>
-                        <img src="./assets/intellija-logo.png" class="mat-menu-text" class="m-l-10 flag-icon">
+                        <mat-icon class="mat-menu-icon">language</mat-icon>
+                        <span class="mat-menu-text"> Change Language </span>
+                        <img src="./assets/us.png" class="mat-menu-text" class="m-l-10 flag-icon">
                     </div>
                 </button>
-
-                <mat-menu #levelOne="matMenu" direction="down" yPosition="below">
+                <mat-menu class="language-menu" #levelOne="matMenu" direction="down" yPosition="below">
                     <button mat-menu-item *ngFor="let countryLanguage of countriesLanguages">
-                        <img src="./assets/intellija-logo.png" class="flag-icon">
-                        {{ countryLanguage.name }}
+                        <mat-icon class="mat-menu-icon">language</mat-icon>
+                        <span>{{ countryLanguage.name }} </span>
+                        <img src="./assets/{{ countryLanguage.code | lowercase }}.png" class="flag-icon">
+
                     </button>
                 </mat-menu>
-
+                <button mat-menu-item>
+                    <mat-icon class="mat-menu-icon">settings</mat-icon>
+                    <span class="mat-menu-text">Settings</span>
+                </button>
                 <button mat-menu-item (click)="logOut()">
-                    <mat-icon>exit_to_app</mat-icon>
-                    <span class="mat-menu-text">Sign Out ({{"test"}})</span>
+                    <mat-icon class="mat-menu-icon">exit_to_app</mat-icon>
+                    <span class="mat-menu-text">Sign Out</span>
                 </button>
             </mat-menu>
         </div>
