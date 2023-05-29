@@ -1,4 +1,87 @@
-<h2>Intellija Header</h2>
-<!-- ============================================================== -->
-<!-- Header - style you can find in header.scss -->
-<!-- ============================================================== -->
+<header class="header">
+    <!-- header upper section start -->
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <img class="logo" src="./assets/intellija-logo.png" />
+        <div fxLayout="row" fxLayoutAlign="center center" class="header-top-items">
+            <mat-icon>alarm</mat-icon>
+            <div class="demo-section">
+                <mat-icon matBadge="3" class="notification-icon">notifications_none</mat-icon>
+            </div>
+
+            <!-- profile icon start -->
+            <button [matMenuTriggerFor]="profile" mat-icon-button>
+                <mat-icon customTooltip="Profile Settings">person</mat-icon>
+            </button>
+            <mat-menu #profile="matMenu" class="mymegamenu">
+                <button mat-menu-item>
+                    <mat-icon>settings</mat-icon>
+                    <span class="mat-menu-text">Settings </span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>person</mat-icon>
+                    <span class="mat-menu-text">Profile</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>notifications_off</mat-icon>
+                    <span class="mat-menu-text">Disable notifications</span>
+                </button>
+
+                <!-- select language -->
+                <button mat-menu-item [matMenuTriggerFor]="levelOne">
+                    <div fxLayout="row" fxLayoutAlign="start center">
+                        <mat-icon>language</mat-icon>
+                        <span class="mat-menu-text"> Select Language </span>
+                        <img src="./assets/intellija-logo.png" class="mat-menu-text" class="m-l-10 flag-icon">
+                    </div>
+                </button>
+
+                <mat-menu #levelOne="matMenu" direction="down" yPosition="below">
+                    <button mat-menu-item *ngFor="let countryLanguage of countriesLanguages">
+                        <img src="./assets/intellija-logo.png" class="flag-icon">
+                        {{ countryLanguage.name }}
+                    </button>
+                </mat-menu>
+
+                <button mat-menu-item (click)="logOut()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span class="mat-menu-text">Sign Out ({{"test"}})</span>
+                </button>
+            </mat-menu>
+        </div>
+        <!-- profile icon end -->
+    </div>
+    <!-- header upper section end -->
+
+    <!-- header lower section start -->
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-icon class="menu-icon">menu</mat-icon>
+
+        <button [matMenuTriggerFor]="menu" style="background-color: white; border: none">
+            <mat-icon>remove_red_eye</mat-icon>
+            <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <span mat-menu-item>Redial</span>
+            <span mat-menu-item>Disable alerts</span>
+        </mat-menu>
+
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <button [matMenuTriggerFor]="dashboardMenu"
+                style="color: #4361EE; background-color: white; border: none; margin-right: 4px; ">
+                <div style="display:flex ;">
+                    <mat-icon>dashboard</mat-icon> <span class="dashboard-menu-text"> Dashboard</span>
+                    <mat-icon style="margin-left: 10px;">keyboard_arrow_down</mat-icon>
+                </div>
+            </button>
+            <span class="dashboard-name">DashBoard Name</span>
+        </div>
+
+        <mat-menu #dashboardMenu="matMenu">
+            <span mat-menu-item>Dashboard 1 </span>
+            <span mat-menu-item>Dashboard 2 </span>
+            <span mat-menu-item>Dashboard 3 </span>
+        </mat-menu>
+    </div>
+    <!-- header lower section end -->
+
+</header>
