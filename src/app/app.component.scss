@@ -1,0 +1,151 @@
+:host ::ng-deep{
+    .mymegamenu{
+      max-width: 320px;
+      width: 100%;
+      margin-top: 12px;
+      padding: 0;
+      .mat-menu-content{
+        background: #282828 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .mat-menu-item{
+          padding: 17px 27px;
+          line-height: 1;
+          height: auto;
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: row;
+          align-items: center;
+            .mat-menu-text{
+              line-height: 1;
+              color: #fff !important;
+              font-size: 16px !important;
+            }
+        }
+      }
+
+      .dark .mat-form-field-appearance-fill .mat-form-field-flex {
+        background-color: transparent !important;
+        // width: 126px;
+      }
+    }
+
+    .refresh{
+      width: 68px;
+      margin-right: 6px;
+      margin-bottom: 20px;
+    }
+
+    .btn-refresh{
+      color: #FFF;
+      margin-top: -8px;
+      position: relative;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        height: 32px;
+        padding: 0px 8px;
+        border-radius: 2px;
+        line-height: 30px;
+        font-weight: 500;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        span{
+          font-size: 20px;
+        }
+      &:hover{
+        color: #FFD701 !important;
+        background: rgb(34, 37, 43);
+      }
+    }
+
+    .mat-select{
+      height: 32px;
+        padding: 0px 8px;
+        border-radius: 2px;
+        line-height: 30px;
+        font-weight: 500;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        color: #FFF;
+      &:hover{
+        color: #FFD701;
+        background: rgb(34, 37, 43);
+      }
+    }
+
+    // start mat slide toggle buttons
+    .mat-slide-toggle-thumb:hover{
+      background: #FFD701 !important;
+    }
+
+    mat-slide-toggle.mat-warn.mat-checked{
+      mat-icon{
+        color: #FFD701 !important;
+      }
+    }
+
+    mat-slide-toggle{
+      mat-icon{
+      font-size: 18px;
+      margin-top: 5px;
+      }
+
+      &:hover{
+        mat-icon{
+          color: #FFD701 !important;
+        }
+      }
+    }
+
+    .mat-select-min-line{
+      font-size: 15px;
+    }
+
+  }
+
+  mat-icon {
+    margin-right: 16px;
+    vertical-align: middle;
+    color: white !important;
+  }
+
+  .notifi-icon {
+    margin-right: 10px;
+  }
+
+  .notifi-text {
+    width: 275px;
+    white-space: initial;
+  }
+
+  .no-record {
+    color: #000;
+  }
+
+  .mat-icon-button:hover{
+    color: #FFD701;
+  }
+
+  .btn-dashboard{
+    border-left: 1px solid black;
+  }
+
+  .label-admin-toggle{
+    font-size: small;
+    position: absolute;
+    right: 5px;
+    top: -5px;
+  }
+
+  .mat-menu-item:hover{
+    mat-icon{
+      color: #FFD701 !important;
+    }
+  }
+
+  .flag-icon{
+    width: 16px;
+    height: 12px;
+  }
