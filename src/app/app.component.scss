@@ -9,6 +9,8 @@
     top: -6px !important;
     right: -8px !important;
   }
+
+
 }
 
 .header{
@@ -50,4 +52,16 @@ mat-icon{
   font-size: 20px;
   color: #24292EBF ;
   margin-left: 10px;
+}
+
+.mat-menu-item{
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #24292EBF;
+  mat-icon{
+    color: #24292EBF;
+  }
 }
