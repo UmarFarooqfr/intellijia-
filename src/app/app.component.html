@@ -5,7 +5,8 @@
         <div fxLayout="row" fxLayoutAlign="center center" class="header-top-items">
             <mat-icon>alarm</mat-icon>
             <div class="demo-section">
-                <mat-icon matBadge="3" [matMenuTriggerFor]="notification" class="notification-icon">notifications_none</mat-icon>
+                <mat-icon matBadge="3" [matMenuTriggerFor]="notification" class="notification-icon">notifications_none
+                </mat-icon>
             </div>
             <mat-menu #notification="matMenu" class="notification-menu">
                 <span style="display: flex;">
@@ -112,8 +113,9 @@
             <span class="dashboard-name">DashBoard Name</span>
         </div>
         <mat-menu class="dashboardMenu" #dashboardMenu="matMenu">
-            <span mat-menu-item [matMenuTriggerFor]="levelOneDashBoard"> <mat-icon
-                    class="dashboardMenuIcon">keyboard_arrow_left</mat-icon> Operations </span>
+            <span mat-menu-item [matMenuTriggerFor]="levelOneDashBoard">
+                <mat-icon class="dashboardMenuIcon">keyboard_arrow_left</mat-icon> Operations
+            </span>
         </mat-menu>
         <mat-menu class="dashboardLevelOneMenu" #levelOneDashBoard="matMenu" direction="right" yPosition="below">
             <span mat-menu-item>
@@ -125,22 +127,22 @@
         <!-- dashboard menu button end -->
 
         <div style="display: flex;">
-            <button    [matMenuTriggerFor]="timeMenu"  style=" background-color: white; border: none; margin-right: 4px; ">
-              <mat-icon>access_time</mat-icon>
-              <span *ngIf="selectedTime" style=" padding: 3px ;">  {{selectedTime}} </span>
-              <mat-icon style="color: 24292E;">keyboard_arrow_down</mat-icon>
+            <button [matMenuTriggerFor]="timeMenu" style=" background-color: white; border: none; margin-right: 4px; ">
+                <mat-icon>access_time</mat-icon>
+                <span *ngIf="selectedTime" style=" padding: 3px ;"> {{selectedTime}} </span>
+                <mat-icon style="color: 24292E;">keyboard_arrow_down</mat-icon>
             </button>
-            </div>
-            <!-- #menu="matMenu" -->
-            <mat-menu  #timeMenu="matMenu">
-              <span   mat-menu-item class="time" (click)="onMenuItemTime('Last One Hours')">Last One Hours</span>
-              <span  mat-menu-item class="time" (click)="onMenuItemTime('Last Two  Hours')">Last Two  Hours </span>
-              <span  mat-menu-item class="time" (click)="onMenuItemTime('Last Three  Hours')">Last Three  Hours </span>
-            </mat-menu>
+        </div>
+        <!-- #menu="matMenu" -->
+        <mat-menu #timeMenu="matMenu">
+            <span mat-menu-item class="time" (click)="onMenuItemTime('Last One Hours')">Last One Hours</span>
+            <span mat-menu-item class="time" (click)="onMenuItemTime('Last Two  Hours')">Last Two Hours </span>
+            <span mat-menu-item class="time" (click)="onMenuItemTime('Last Three  Hours')">Last Three Hours </span>
+        </mat-menu>
 
-            <button style=" background-color: white; border: none;   margin-left: 42px;">
-              <mat-icon>refresh</mat-icon>
-            </button>
+        <button style=" background-color: white; border: none;   margin-left: 42px;">
+            <mat-icon>refresh</mat-icon>
+        </button>
 
     </div>
     <!-- header lower section end -->
